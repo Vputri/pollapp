@@ -1,0 +1,61 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>{% block title %}{% endblock %}</title>
+
+		<style type="text/css">
+			.center {
+			  margin: auto;
+			  border: 3px solid green;
+			  padding: 20px;
+			}
+	    </style>
+
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+	</head>
+	<body>
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="{% url 'home' %}">Poll Application</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-ex1-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="{% url 'home' %}">Home</a></li>
+						<li><a href="{% url 'create' %}">Create</a></li>
+						<li><a href="{% url 'login' %}">Login</a></li>
+						<li><a href="{% url 'logout' %}">Logout</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+			{% block main %}{% endblock %}
+		</div>
+
+		<nav class="navbar navbar-default navbar-fixed-bottom center">
+	      <div class="text-center">© 2020 Copyright :
+	        <a href="https://github.com/">YUJIPOLL</a>
+	      </div>
+	    </nav>
+
+	</body>
+</html>
