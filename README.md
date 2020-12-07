@@ -1,7 +1,5 @@
 # pollapp
 
-
-
 login :
 
 username : admin
